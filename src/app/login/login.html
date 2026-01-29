@@ -1,0 +1,29 @@
+<div class="min-h-screen flex items-center justify-center bg-cover bg-center" style="background-image: url('/oficina.png');">
+    <div class="bg-white p-8 rounded shadow-md">
+        <div class="mb-4 flex justify-center">
+            <img src="/endalia.png" alt="Endalia Logo" class="h-12" />
+        </div>
+        <h1 class="text-2xl font-bold mb-2">Bienvenido/a</h1>
+            <p class="mb-4">Introduce tus credenciales para acceder</p>
+
+            <form (ngSubmit)="onSubmit()">
+                <div class="flex items-center mb-4">
+                    <label for="email" class="text-gray-700 mr-4 w-24">Usuario</label>
+                    <input type="email" id="email" name="email" required class="flex border rounded px-2 py-1 w-60 border-gray-300"
+                        [(ngModel)]="email" />
+                </div>
+                <div class="flex items-center mb-4">
+                    <label for="password" class="text-gray-700 mr-4 w-24">Contraseña</label>
+                    <input type="password" id="password" name="password" required class="flex border rounded px-2 py-1 w-60 border-gray-300"
+                        [(ngModel)]="password" />
+                </div>
+
+                <p *ngIf="errorMessage" class="text-red-500">{{ errorMessage }}</p>
+
+                <button type="submit" [disabled]="loading"
+                    class="w-full bg-blue-500 text-white py-2 rounded mt-6 hover:bg-blue-600">
+                    {{ loading ? "Accediendo..." : "Acceder" }}
+                </button>
+            </form>
+        </div>
+</div>
