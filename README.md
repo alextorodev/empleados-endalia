@@ -1,59 +1,63 @@
 # EmpleadosEndalia
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.1.1.
+Aplicación de ejemplo para gestionar empleados de Endalia HR. Construida con Angular 21.1.1.
 
-## Development server
+## Funcionalidades principales
 
-To start a local development server, run:
+- Login de usuario con autenticación simulada.
+- Listado de empleados con búsqueda y filtrado por nombre, apellido, puesto, teléfono o correo.
+- Orden automático por apellido.
+- Barra superior con nombre de la app y botón de logout.
+- Persistencia básica de sesión usando localStorage.
+- Mocks de datos para empleados y usuarios.
 
+## Mocks de datos
+
+**Usuarios para login:** `/src/app/mocks/auth.mock.ts`
+
+Credenciales disponibles:
+
+| Email | Contraseña |
+
+| `admin@endalia.com` | `123456` |
+| `user@endalia.com` | `654321` |
+
+**Empleados:** `/src/app/mocks/employees.mock.ts`
+
+Contiene 10 empleados de prueba con nombre, apellido, puesto, teléfono, email e imagen de perfil.
+
+## Cómo ejecutar el proyecto
+
+**Instalar dependencias:**
+```bash
+npm install
+```
+
+**Levantar servidor de desarrollo:**
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+**Abrir en el navegador:**
+```
+http://localhost:4200/
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+La app se recarga automáticamente cuando modificas el código.
 
+## Comandos útiles
+
+**Generar un nuevo componente:**
 ```bash
-ng generate --help
+ng generate component nombre-del-componente
 ```
 
-## Building
-
-To build the project run:
-
+**Compilar el proyecto:**
 ```bash
 ng build
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
+**Ejecutar tests unitarios (Vitest):**
 ```bash
 ng test
 ```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
